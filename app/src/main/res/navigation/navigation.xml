@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/first">
+
+    <fragment
+        android:id="@+id/list"
+        android:name="com.example.basecomponents.ListFragment"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/to_counter"
+            app:destination="@id/counter" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/counter"
+        android:name="com.example.basecomponents.CounterFragment"
+        tools:layout="@layout/fragment_counter">
+
+        <argument
+            android:name="key_counter"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/first"
+        android:name="com.example.basecomponents.FirstFragment"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/to_second"
+            app:destination="@id/second" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/second"
+        android:name="com.example.basecomponents.SecondFragment"
+        tools:layout="@layout/fragment_second">
+
+        <argument
+            android:name="isChecked"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
